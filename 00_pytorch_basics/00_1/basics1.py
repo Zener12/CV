@@ -23,7 +23,7 @@ def main(*args, **kwargs):
     print(w.grad, w.grad_fn, w.is_leaf)
     print(c.grad, c.grad_fn, c.is_leaf)
 
-    optimizer = torch.optim.SGD([w,c], lr = 0.05)
+    optimizer = torch.optim.SGD([w,c], lr = 0.1)
 
     # a,b,L = forward(w,c,x,y)
 
@@ -38,7 +38,7 @@ def main(*args, **kwargs):
     # print(w.grad, w.grad_fn, w.is_leaf)
     # print(c.grad, c.grad_fn, c.is_leaf)
 
-    for i in range(25):
+    for i in range(2):
         optimizer.zero_grad()
         a,b,L = forward(w,c,x,y)
         L.backward()
